@@ -1,0 +1,89 @@
+# Fourier Transform Visualization Scene Plan
+
+## Scene Overview
+This scene introduces the Fourier Transform, showing how a time-domain signal can be decomposed into its frequency components. Duration: 30 seconds.
+
+## FRAME-BY-FRAME BREAKDOWN
+
+### [00:00-00:05] Introduction
+- **Title** appears at TOP ZONE (y=3): "Fourier Transform: Time to Frequency Domain"
+- **Subtitle** fades in below title (y=2.5): "Decomposing signals into frequency components"
+- **Explanatory text** appears in BOTTOM ZONE (y=-3): "The Fourier Transform converts a time-domain signal into its frequency representation"
+
+### [00:05-00:12] Time Domain Signal
+- **Time domain axes** appear in MIDDLE ZONE centered at (0,0)
+  - X-axis labeled "Time (s)" spanning (-4, 4)
+  - Y-axis labeled "Amplitude" spanning (-1.5, 1.5)
+- **Composite signal** draws from left to right:
+  - f(t) = sin(2πt) + 0.5sin(6πt)
+  - Signal plotted from t=-4 to t=4
+- **Formula** appears in BOTTOM ZONE (y=-3.5): "f(t) = sin(2πt) + 0.5sin(6πt)"
+
+### [00:12-00:20] Transform Process
+- **Explanatory text** updates: "The Fourier Transform identifies frequency components present in the signal"
+- **Transform equation** appears at BOTTOM ZONE (y=-3.5): "F(ω) = ∫f(t)e^(-iωt)dt"
+- **Transform animation**:
+  - Original signal splits into its component sinusoids
+  - First component sin(2πt) shifts up (y=1)
+  - Second component 0.5sin(6πt) shifts down (y=-1)
+  - Both components highlighted in different colors (red and blue)
+
+### [00:20-00:30] Frequency Domain Result
+- Time domain signal and components fade out
+- **Frequency domain axes** appear in MIDDLE ZONE centered at (0,0)
+  - X-axis labeled "Frequency (Hz)" spanning (0, 4)
+  - Y-axis labeled "Magnitude" spanning (0, 1.5)
+- **Frequency spikes** appear:
+  - Spike at x=1 with height 1.0 (1 Hz component)
+  - Spike at x=3 with height 0.5 (3 Hz component)
+- **Final explanatory text** in BOTTOM ZONE (y=-3): "The Fourier Transform reveals two frequency components: 1 Hz and 3 Hz with magnitudes 1.0 and 0.5"
+
+## POSITIONING DETAILS
+
+### Fixed Elements
+- **Title**: Centered at (0, 3)
+- **Subtitle**: Centered at (0, 2.5)
+- **Explanatory Text Box**: Black background with white text, centered at (0, -3), width 10
+- **Formula Display**: Centered at (0, -3.5), width 8
+
+### Animation Elements
+- **Time Domain Axes**: 
+  - Origin at (0, 0)
+  - X-axis from (-4, 0) to (4, 0)
+  - Y-axis from (0, -1.5) to (0, 1.5)
+  
+- **Frequency Domain Axes**:
+  - Origin at (0, 0)
+  - X-axis from (0, 0) to (4, 0)
+  - Y-axis from (0, 0) to (0, 1.5)
+
+- **Signal Components**:
+  - Original signal centered at y=0
+  - First component shifted to y=1
+  - Second component shifted to y=-1
+
+## MATHEMATICAL CONTENT
+
+### Equations
+1. Time domain signal: f(t) = sin(2πt) + 0.5sin(6πt)
+2. Fourier Transform: F(ω) = ∫f(t)e^(-iωt)dt
+
+### Labels
+- Time Domain:
+  - X-axis: "Time (s)"
+  - Y-axis: "Amplitude"
+  - Signal: "f(t)"
+  - Component 1: "sin(2πt)"
+  - Component 2: "0.5sin(6πt)"
+
+- Frequency Domain:
+  - X-axis: "Frequency (Hz)"
+  - Y-axis: "Magnitude"
+  - First spike: "1 Hz"
+  - Second spike: "3 Hz"
+
+### Specific Values
+- Time range: t ∈ [-4, 4]
+- Frequency range: f ∈ [0, 4]
+- Component frequencies: 1 Hz and 3 Hz
+- Component magnitudes: 1.0 and 0.5

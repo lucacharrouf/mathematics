@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowLeft, Search } from "lucide-react";
+import { ArrowLeft, Search, X } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 interface TopicDirectoryProps {
   title?: string;
@@ -13,10 +14,9 @@ interface Topic {
   id: string;
   title: string;
   description: string;
-  imageUrl: string;
-  videoUrl?: string;
+  videoUrl: string;
   category: string;
-  hasVideo?: boolean;
+  hasVideo: boolean;
 }
 
 const TopicDirectory: React.FC<TopicDirectoryProps> = ({
@@ -26,43 +26,147 @@ const TopicDirectory: React.FC<TopicDirectoryProps> = ({
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [topicSuggestion, setTopicSuggestion] = useState("");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
-  // Sample topics - these would come from your database in a real app
   const topics: Topic[] = [
+    // Linear Algebra
     {
-      id: "linear-algebra-vectors",
-      title: "Vector Operations",
-      description:
-        "Visualize vector addition, subtraction, and scalar multiplication in 2D and 3D space.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80",
+      id: "vector-addition",
+      title: "Vector Addition",
+      description: "Visualize vector addition in 2D and 3D space with step-by-step animation.",
       videoUrl: "/src/videos/vector_addition_animation.mp4",
       category: "Linear Algebra",
       hasVideo: true,
     },
     {
-      id: "linear-algebra-orthogonality",
-      title: "Orthogonality & Projections",
-      description:
-        "Learn about orthogonal vectors, projections, and their applications in linear algebra.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1580894908361-967195033215?w=800&q=80",
+      id: "orthogonality",
+      title: "Orthogonality",
+      description: "Learn about orthogonal vectors and their geometric properties.",
       videoUrl: "/src/videos/orthogonality_animation.mp4",
       category: "Linear Algebra",
       hasVideo: true,
     },
+    {
+      id: "eigenvalues",
+      title: "Eigenvalues and Eigenvectors",
+      description: "Understanding eigenvalues and eigenvectors through geometric transformations.",
+      videoUrl: "/src/videos/eigenvalue_and_eigenvectors_animation_ic.mp4",
+      category: "Linear Algebra",
+      hasVideo: true,
+    },
+    {
+      id: "eigendecomposition",
+      title: "Eigendecomposition",
+      description: "Visualize matrix decomposition into eigenvalues and eigenvectors.",
+      videoUrl: "/src/videos/eigendecomposition_animation_ic.mp4",
+      category: "Linear Algebra",
+      hasVideo: true,
+    },
+    {
+      id: "svd",
+      title: "Singular Value Decomposition",
+      description: "Understanding SVD through geometric transformations and applications.",
+      videoUrl: "/src/videos/singular_value_decomposition_animation.mp4",
+      category: "Linear Algebra",
+      hasVideo: true,
+    },
+    // Complex Analysis
+    {
+      id: "complex-numbers",
+      title: "Complex Numbers",
+      description: "Visualization of complex numbers and their operations in the complex plane.",
+      videoUrl: "/src/videos/complex_numbers_animation_ic.mp4",
+      category: "Complex Analysis",
+      hasVideo: true,
+    },
+    // Probability and Statistics
+    {
+      id: "bayes-theorem",
+      title: "Bayes' Theorem",
+      description: "Understanding conditional probability and Bayes' Theorem through visualization.",
+      videoUrl: "/src/videos/bayes_theorem_animation_ic.mp4",
+      category: "Probability and Statistics",
+      hasVideo: true,
+    },
+    // Machine Learning
+    {
+      id: "svm",
+      title: "Support Vector Machines",
+      description: "Visualization of SVM classification and margin maximization.",
+      videoUrl: "/src/videos/support_vector_machines_animation_1.mp4",
+      category: "Machine Learning",
+      hasVideo: true,
+    },
+    {
+      id: "gradient-descent",
+      title: "Gradient Descent",
+      description: "Understanding optimization through gradient descent visualization.",
+      videoUrl: "/src/videos/gradient_descent_animation.mp4",
+      category: "Machine Learning",
+      hasVideo: true,
+    },
+    // Calculus
+    {
+      id: "derivatives",
+      title: "Calculus Derivatives",
+      description: "Visual understanding of derivatives and their geometric interpretation.",
+      videoUrl: "/src/videos/calculus_derivatives_animation.mp4",
+      category: "Calculus",
+      hasVideo: true,
+    },
+    // Signal Processing
+    {
+      id: "fourier-transform",
+      title: "Fourier Transform",
+      description: "Understanding signal decomposition through Fourier Transform visualization.",
+      videoUrl: "/src/videos/fourier_transform_animation.mp4",
+      category: "Signal Processing",
+      hasVideo: true,
+    },
+    // Financial Mathematics
+    {
+      id: "financial-math",
+      title: "Financial Mathematics",
+      description: "Visualization of financial concepts and mathematical models.",
+      videoUrl: "/src/videos/financial_mathematics_animation_ic.mp4",
+      category: "Financial Mathematics",
+      hasVideo: true,
+    },
+    // Geometry
+    {
+      id: "pythagorean",
+      title: "Pythagorean Theorem",
+      description: "Geometric proof and visualization of the Pythagorean Theorem.",
+      videoUrl: "/src/videos/pythagorean_theorem_animation_ic.mp4",
+      category: "Geometry",
+      hasVideo: true,
+    },
   ];
 
-  const filteredTopics = topics.filter(
-    (topic) =>
+  // Get unique categories from topics
+  const categories = Array.from(new Set(topics.map(topic => topic.category)));
+
+  const filteredTopics = topics.filter((topic) => {
+    const matchesSearch = 
       topic.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       topic.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      topic.category.toLowerCase().includes(searchQuery.toLowerCase()),
-  );
+      topic.category.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(topic.category);
+    
+    return matchesSearch && matchesCategory;
+  });
+
+  const toggleCategory = (category: string) => {
+    setSelectedCategories(prev => 
+      prev.includes(category) 
+        ? prev.filter(c => c !== category)
+        : [...prev, category]
+    );
+  };
 
   const handleSubmitSuggestion = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you would send this to your backend
     alert(
       `Thank you for suggesting "${topicSuggestion}"! We'll consider adding this topic soon.`,
     );
@@ -95,7 +199,7 @@ const TopicDirectory: React.FC<TopicDirectoryProps> = ({
           <p className="text-lg text-slate-600 mb-8">{description}</p>
 
           {/* Search bar */}
-          <div className="relative max-w-md mx-auto">
+          <div className="relative max-w-md mx-auto mb-6">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
             <Input
               type="text"
@@ -104,6 +208,28 @@ const TopicDirectory: React.FC<TopicDirectoryProps> = ({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
+          </div>
+
+          {/* Category tags */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {categories.map((category) => {
+              const isSelected = selectedCategories.includes(category);
+              return (
+                <Badge
+                  key={category}
+                  variant={isSelected ? "default" : "outline"}
+                  className={`cursor-pointer px-4 py-1 text-sm ${
+                    isSelected ? "bg-primary hover:bg-primary" : "hover:bg-primary/10"
+                  }`}
+                  onClick={() => toggleCategory(category)}
+                >
+                  {category}
+                  {isSelected && (
+                    <X className="ml-1 h-3 w-3 inline-block" />
+                  )}
+                </Badge>
+              );
+            })}
           </div>
         </div>
 
@@ -116,41 +242,23 @@ const TopicDirectory: React.FC<TopicDirectoryProps> = ({
                 className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="h-48 overflow-hidden">
-                  {topic.hasVideo ? (
-                    <video
-                      src={topic.videoUrl}
-                      controls
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <img
-                      src={topic.imageUrl}
-                      alt={topic.title}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
+                  <video
+                    src={topic.videoUrl}
+                    controls
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6">
-                  <div className="text-sm font-medium text-indigo-600 mb-1">
+                  <div className="text-sm font-medium text-primary mb-1">
                     {topic.category}
                   </div>
                   <h3 className="text-xl font-bold mb-2">{topic.title}</h3>
                   <p className="text-slate-600 mb-4">{topic.description}</p>
                   <Button
                     className="w-full"
-                    onClick={() => {
-                      if (topic.videoUrl) {
-                        // Open the video in a new tab or modal
-                        window.open(topic.videoUrl, "_blank");
-                      } else {
-                        // In a real app, this would navigate to the specific topic page
-                        alert("Video content will be added later");
-                      }
-                    }}
+                    onClick={() => window.open(topic.videoUrl, "_blank")}
                   >
-                    {topic.hasVideo
-                      ? "Watch Full Video"
-                      : "Watch Visualization"}
+                    Watch Full Video
                   </Button>
                 </div>
               </div>
@@ -159,9 +267,16 @@ const TopicDirectory: React.FC<TopicDirectoryProps> = ({
             <div className="col-span-full text-center py-12">
               <p className="text-lg text-slate-600 mb-4">
                 No topics found matching "{searchQuery}"
+                {selectedCategories.length > 0 && ` in selected categories`}
               </p>
-              <Button variant="outline" onClick={() => setSearchQuery("")}>
-                Clear Search
+              <Button 
+                variant="outline" 
+                onClick={() => {
+                  setSearchQuery("");
+                  setSelectedCategories([]);
+                }}
+              >
+                Clear Filters
               </Button>
             </div>
           )}

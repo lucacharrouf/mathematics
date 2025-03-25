@@ -1,0 +1,7 @@
+• Fourier Transform decomposes a function into its constituent frequencies, expressing it as a sum of sines and cosines.
+
+• It converts signals from time domain to frequency domain, revealing which frequencies are present and their strengths.
+
+• The transform is reversible—you can reconstruct the original function from its frequency components.
+
+• Applications include signal processing, PDEs, quantum mechanics, and image compression.

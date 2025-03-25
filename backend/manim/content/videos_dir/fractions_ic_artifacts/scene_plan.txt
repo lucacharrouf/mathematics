@@ -1,0 +1,78 @@
+# Scene Plan: Understanding Fractions
+
+## FRAME-BY-FRAME BREAKDOWN
+
+### [00:00-00:05] Introduction
+- Title "Understanding Fractions" appears at TOP ZONE (0, 3) with scale 1.2
+- Fade in explanatory text at BOTTOM ZONE (0, -3): "A fraction represents parts of a whole"
+- Wait 2 seconds after text appears
+
+### [00:05-00:12] First Concept: Fraction as Division
+- Clear TOP ZONE, keep title
+- In MIDDLE ZONE, a circle appears at (0, 0)
+- Circle divides into 4 equal parts with dashed lines
+- One part highlights in yellow
+- Text in BOTTOM ZONE updates to (0, -3): "The fraction 1/4 means 1 part out of 4 equal parts"
+- Fraction "1/4" appears at (-2, 0.5)
+- Wait 2 seconds
+
+### [00:12-00:20] Second Concept: Different Representations
+- Circle transforms to a horizontal rectangle at (0, 0) with width 4, height 1
+- Rectangle divides into 4 equal sections
+- First section highlights in yellow
+- Fraction "1/4" moves to (-2, 0.5)
+- At (2, 0.5), a decimal "0.25" appears
+- At (4, 0.5), percentage "25%" appears
+- Text in BOTTOM ZONE updates to (0, -3): "Fractions can be written as decimals or percentages"
+- Wait 2 seconds
+
+### [00:20-00:30] Third Concept: Equivalent Fractions
+- Clear middle animations except the rectangle
+- Rectangle transforms to show 8 equal parts, with 2 parts highlighted in yellow
+- Fraction "2/8" appears at (-2, 0.5)
+- "=" sign appears at (0, 0.5)
+- Fraction "1/4" appears at (2, 0.5)
+- Text in BOTTOM ZONE updates to (0, -3): "Equivalent fractions represent the same amount"
+- An arrow appears pointing to both fractions with text "Same value!" at (0, 1.5)
+- Wait 2 seconds
+
+## POSITIONING DETAILS
+
+### Text Placements
+- Title: Centered at (0, 3) in TOP ZONE
+- Explanatory text: Centered at (0, -3) in BOTTOM ZONE with black background for readability
+- Fraction labels: Positioned near their visual representations in MIDDLE ZONE
+
+### Key Element Coordinates
+- Main visual elements centered at (0, 0) in MIDDLE ZONE
+- Circle/rectangle width: Never exceeds 4 units
+- Visual dividers: Evenly spaced within shapes
+- Fraction notations: Positioned at (-2, 0.5), (2, 0.5), and related positions
+- Equivalent fraction arrow: From (-1, 1) to (1, 1)
+
+### Transitions
+- All transitions use smooth fade in/out with duration of 1 second
+- Shape transformations occur over 1.5 seconds
+- Highlighting of parts occurs over 0.8 seconds
+- Text updates fade out old text before fading in new text
+
+## MATHEMATICAL CONTENT
+
+### Exact Equations/Notations
+- Fraction notation: $\frac{1}{4}$
+- Decimal notation: $0.25$
+- Percentage notation: $25\%$
+- Equivalent fraction: $\frac{2}{8} = \frac{1}{4}$
+
+### Objects and Labels
+- Circle: Labeled with fraction $\frac{1}{4}$ when one quarter is highlighted
+- Rectangle: Initially divided into 4 parts, then 8 parts
+- Parts labeled as "1 part" and "4 equal parts" in first example
+- Equivalent parts labeled as "2 parts" and "8 equal parts" in third concept
+
+### Mathematical Relationships Shown
+- Fraction to decimal conversion: $\frac{1}{4} = 0.25$
+- Fraction to percentage conversion: $\frac{1}{4} = 25\%$
+- Equivalent fractions: $\frac{2}{8} = \frac{1}{4}$ (demonstrated visually)
+
+This scene provides a clear, visually engaging explanation of fraction concepts while maintaining proper mathematical notation and visual organization.
