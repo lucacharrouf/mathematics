@@ -45,16 +45,10 @@ function Home() {
   const recommendedTopics: RecommendedTopic[] = [
     { id: "eigenvalues", name: "Eigenvalues" },
     { id: "fourier-transform", name: "Fourier Transform" },
-    { id: "complex-numbers", name: "Complex Numbers" },
-    { id: "bayes-theorem", name: "Bayes' Theorem" },
-    { id: "support-vector-machines", name: "Support Vector Machines" },
-    { id: "gradient-descent", name: "Gradient Descent" },
-    { id: "derivatives", name: "Calculus Derivatives" },
-    { id: "financial-mathematics", name: "Financial Mathematics" },
-    { id: "pythagorean-theorem", name: "Pythagorean Theorem" },
-    { id: "vector-addition", name: "Vector Addition" },
-    { id: "orthogonality", name: "Orthogonality" },
-    { id: "singular-value-decomposition", name: "Singular Value Decomposition" }
+    { id: "matrix-multiplication", name: "Matrix Multiplication" },
+    { id: "vector-spaces", name: "Vector Spaces" },
+    { id: "differential-equations", name: "Differential Equations" },
+    { id: "probability-distributions", name: "Probability Distributions" },
   ];
 
   const findSimilarTopic = (inputTopic: string): string | null => {
