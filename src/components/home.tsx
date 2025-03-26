@@ -122,8 +122,11 @@ function Home() {
       <div className="relative bg-white/80 backdrop-blur-sm shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <h1 className="text-2xl font-bold">Math Visualizer</h1>
+              <Badge variant="secondary" className="bg-blue-100 text-blue-800 hover:bg-blue-100">
+                Beta
+              </Badge>
             </div>
             <Button
               variant="outline"
