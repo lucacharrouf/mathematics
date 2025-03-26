@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "../ui/button";
 import { ExternalLink, Github, Mail, Twitter } from "lucide-react";
 import EmailSignupForm from "./EmailSignupForm";
 
@@ -22,13 +21,9 @@ const Footer = ({
   companyName = "Math Visualization Platform",
   year = new Date().getFullYear(),
   links = [
-    { label: "About", href: "/about" },
-    { label: "Features", href: "/features" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
-    { label: "Terms", href: "/terms" },
-    { label: "Privacy", href: "/privacy" },
+    { label: "About", href: "/" },
+    { label: "Video Directory", href: "/topics" },
+    { label: "Contact", href: "mailto:lucacharrouf@berkeley.edu", external: true },
   ],
   socialLinks = [
     {
@@ -56,15 +51,8 @@ const Footer = ({
           </div>
 
           <div className="flex flex-col gap-4 w-full md:w-auto">
-            <Button
-              variant="outline"
-              className="border-white text-blue-900 hover:bg-blue hover:text-slate-900"
-              onClick={() => (window.location.href = "/topics")}
-            >
-              Explore Visualizations
-            </Button>
             <div className="bg-slate-800 p-4 rounded-lg">
-              <h3 className="text-b font-medium mb-2 text-sm">
+              <h3 className="text-b font-medium mb-2 text-sm text-white">
                 Get updates on new topics
               </h3>
               <EmailSignupForm
