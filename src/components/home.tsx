@@ -45,10 +45,16 @@ function Home() {
   const recommendedTopics: RecommendedTopic[] = [
     { id: "eigenvalues", name: "Eigenvalues" },
     { id: "fourier-transform", name: "Fourier Transform" },
-    { id: "matrix-multiplication", name: "Matrix Multiplication" },
-    { id: "vector-spaces", name: "Vector Spaces" },
-    { id: "differential-equations", name: "Differential Equations" },
-    { id: "probability-distributions", name: "Probability Distributions" },
+    { id: "svm", name: "Support Vector Machines" },
+    { id: "gradient-descent", name: "Gradient Descent" },
+    { id: "derivatives", name: "Derivatives" },
+    { id: "complex-numbers", name: "Complex Numbers" },
+    { id: "bayes-theorem", name: "Bayes Theorem" },
+    { id: "pythagorean-theorem", name: "Pythagorean Theorem" },
+    { id: "vector-addition", name: "Vector Addition" },
+    { id: "orthogonality", name: "Orthogonality" },
+    { id: "svd", name: "Singular Value Decomposition" },
+    { id: "financial-mathematics", name: "Financial Mathematics" }
   ];
 
   const findSimilarTopic = (inputTopic: string): string | null => {
