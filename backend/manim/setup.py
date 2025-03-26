@@ -5,6 +5,8 @@ from prompts import (CONCEPT_BREAKDOWN, ANIMATION_TESTING, DESIGN,
 
 class ManimGenerator:
     def __init__(self, api_key=None):
+        print(f"Debug: Initializing ManimGenerator with API key length: {len(api_key) if api_key else 0}")
+        print(f"Debug: API key starts with: {api_key[:12] if api_key else 'None'}")
         self.client = anthropic.Anthropic(api_key=api_key)
         self.model = "claude-3-7-sonnet-20250219"
         print(f"Initialized ManimGenerator with model: {self.model}")
@@ -16,6 +18,11 @@ class ManimGenerator:
         print(f"Prompt last 100 chars: {prompt[-300:]}...")
         
         try:
+            # Add debug info about the client and API key
+            print(f"Debug: Client initialized: {self.client is not None}")
+            print(f"Debug: API key length: {len(self.client.api_key) if self.client and hasattr(self.client, 'api_key') else 'N/A'}")
+            print(f"Debug: API key starts with: {self.client.api_key[:12] if self.client and hasattr(self.client, 'api_key') else 'N/A'}")
+            
             message = self.client.messages.create(
                 model=self.model,
                 max_tokens=max_tokens,
@@ -53,7 +60,9 @@ class ManimGenerator:
             
             return content_text
         except Exception as e:
-            print(f"Error sending prompt: {e}")
+            print(f"Error sending prompt: {str(e)}")
+            print(f"Error type: {type(e)}")
+            print(f"Error details: {e.__dict__ if hasattr(e, '__dict__') else 'No details available'}")
             return None
     
     def analyze_concept(self, math_topic, audience_level="high school"):

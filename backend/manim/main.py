@@ -25,6 +25,12 @@ def main():
     load_dotenv()
     api_key = os.getenv('ANTHROPIC_API_KEY')
     
+    print(f"Debug: Current working directory: {os.getcwd()}")
+    print(f"Debug: Environment variables loaded: {os.environ.get('ANTHROPIC_API_KEY')}")
+    print(f"Debug: API key loaded: {api_key}")
+    print(f"Debug: API key length: {len(api_key) if api_key else 0}")
+    print(f"Debug: API key starts with: {api_key[:12] if api_key else 'None'}")
+    
     if not api_key:
         print("Error: ANTHROPIC_API_KEY not found in environment variables")
         print("Please create a .env file with your API key or set it as an environment variable")

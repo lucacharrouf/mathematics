@@ -82,7 +82,7 @@ const EmailSignupForm = ({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={placeholder}
-              className={`${isHero ? "h-12 pl-10" : ""} w-full`}
+              className={`${isHero ? "h-12 pl-10" : ""} w-full text-slate-900`}
               disabled={status === "loading"}
             />
             {isHero && (

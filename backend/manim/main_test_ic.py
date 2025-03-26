@@ -133,6 +133,10 @@ def main():
     load_dotenv()
     api_key = os.getenv('ANTHROPIC_API_KEY')
     
+    print(f"Current working directory: {os.getcwd()}")
+    print(f"Environment variables loaded: {os.environ.get('ANTHROPIC_API_KEY')}")
+    print(f"API key loaded: {api_key}")
+    
     if not api_key:
         print("Error: ANTHROPIC_API_KEY not found in environment variables")
         print("Please create a .env file with your API key or set it as an environment variable")
