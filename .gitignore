@@ -32,3 +32,9 @@ core
 
 .github/
 
+# Environment variables
+.env
+**/.env
+backend/.env
+backend/manim/.env
+
