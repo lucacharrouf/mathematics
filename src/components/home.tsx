@@ -13,23 +13,23 @@ interface RecommendedTopic {
 
 // Video mapping based on available videos
 const videoMapping: { [key: string]: string } = {
-  "eigenvalues": "/src/videos/eigenvalue_and_eigenvectors_animation_ic.mp4",
-  "eigenvectors": "/src/videos/eigenvalue_and_eigenvectors_animation_ic.mp4",
-  "eigendecomposition": "/src/videos/eigendecomposition_animation_ic.mp4",
-  "complex numbers": "/src/videos/complex_numbers_animation_ic.mp4",
-  "bayes theorem": "/src/videos/bayes_theorem_animation_ic.mp4",
-  "bayesian": "/src/videos/bayes_theorem_animation_ic.mp4",
-  "support vector machines": "/src/videos/support_vector_machines_animation_1.mp4",
-  "svm": "/src/videos/support_vector_machines_animation_1.mp4",
-  "gradient descent": "/src/videos/gradient_descent_animation.mp4",
-  "derivatives": "/src/videos/calculus_derivatives_animation.mp4",
-  "fourier transform": "/src/videos/fourier_transform_animation.mp4",
-  "financial mathematics": "/src/videos/financial_mathematics_animation_ic.mp4",
-  "pythagorean theorem": "/src/videos/pythagorean_theorem_animation_ic.mp4",
-  "vector addition": "/src/videos/vector_addition_animation.mp4",
-  "orthogonality": "/src/videos/orthogonality_animation.mp4",
-  "singular value decomposition": "/src/videos/singular_value_decomposition_animation.mp4",
-  "svd": "/src/videos/singular_value_decomposition_animation.mp4"
+  "eigenvalues": "/videos/eigenvalue_and_eigenvectors_animation_ic.mp4",
+  "eigenvectors": "/videos/eigenvalue_and_eigenvectors_animation_ic.mp4",
+  "eigendecomposition": "/videos/eigendecomposition_animation_ic.mp4",
+  "complex numbers": "/videos/complex_numbers_animation_ic.mp4",
+  "bayes theorem": "/videos/bayes_theorem_animation_ic.mp4",
+  "bayesian": "/videos/bayes_theorem_animation_ic.mp4",
+  "support vector machines": "/videos/support_vector_machines_animation_1.mp4",
+  "svm": "/videos/support_vector_machines_animation_1.mp4",
+  "gradient descent": "/videos/gradient_descent_animation.mp4",
+  "derivatives": "/videos/calculus_derivatives_animation.mp4",
+  "fourier transform": "/videos/fourier_transform_animation.mp4",
+  "financial mathematics": "/videos/financial_mathematics_animation_ic.mp4",
+  "pythagorean theorem": "/videos/pythagorean_theorem_animation_ic.mp4",
+  "vector addition": "/videos/vector_addition_animation.mp4",
+  "orthogonality": "/videos/orthogonality_animation.mp4",
+  "singular value decomposition": "/videos/singular_value_decomposition_animation.mp4",
+  "svd": "/videos/singular_value_decomposition_animation.mp4"
 };
 
 function Home() {
